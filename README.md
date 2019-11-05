@@ -18,7 +18,10 @@ This, of course, assumes everyone can re-compile every single application and/or
 
 No problem has ever not been solvable by hooking stuff. We use [rd_route](https://github.com/rodionovd/rd_route) to hook `dlopen()` and redirect the version-less loads to the 0.9.x-compatible ones, `libcrypto.0.9.8.dylib` and `libssl.0.9.8.dylib`. Applications that use the version-less versions would expect this old ABI anyway.
 
+
 # USING IT
+
+**DON'T USE THIS IN PRODUCTION STUFF IF YOU'RE NOT 100% SURE YOUR APPLICATION TARGETS THE OPENSSL 0.9.8 ABI, IT MAY CAUSE SECURITY LEAKS AND OTHER NASTY STUFF. YOU HAVE BEEN WARNED.**
 
 ```
 make
